@@ -103,3 +103,24 @@ class Solution:
 27 题，
  1.  比较简单，无总结
 
+
++977 Squares of a Sorted Array
+Java
+'''
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int left=0, right = nums.length-1;
+        int squareNums[] = new int[nums.length];
+        for(int i = nums.length-1; i>=0; i--){
+            if(nums[left] * nums[left] > nums[right] * nums[right]){
+                squareNums[i] = nums[left] * nums[left];
+                left++;
+            }else{
+                squareNums[i] = nums[right] * nums[right];
+                right--;
+            }
+        }
+        return squareNums;
+    }
+}
+'''
